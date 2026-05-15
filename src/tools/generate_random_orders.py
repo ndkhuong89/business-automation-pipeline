@@ -110,7 +110,7 @@ def generate_orders(num_orders=10):
 
 def run():
 
-    data = generate_orders(random.randint(2, 5))
+    data = generate_orders(random.randint(1000, 1001))
 
     df = pd.DataFrame(data)
 
