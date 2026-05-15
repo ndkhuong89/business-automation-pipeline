@@ -11,3 +11,4 @@ src/logs/
 
 .vscode/
 .idea/
+.automation/playwright/logs
