@@ -15,7 +15,7 @@ def get_conn():
     return conn
 
 
-def fetch_ready_orders(limit=10000):
+def fetch_ready_orders(limit=10):
 
     conn = get_conn()
 

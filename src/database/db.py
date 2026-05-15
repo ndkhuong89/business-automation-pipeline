@@ -52,7 +52,8 @@ def init_db():
             playright_note TEXT,
             attachment_id INTEGER,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            playright_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            playright_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            report_status INTEGER DEFAULT 0
         )
     """)
 
@@ -269,3 +270,91 @@ def mark_attachment_processed(file_path):
 
     conn.commit()
     conn.close()
+
+def mark_report_sent(order_ids):
+    conn = get_connection()
+    cur = conn.cursor()
+
+    cur.executemany(
+        """
+        UPDATE orders
+        SET report_status = 1
+        WHERE order_id = ?
+        """,
+        [(oid,) for oid in order_ids]
+    )
+
+    conn.commit()
+    
+def get_report_summary():
+
+    conn = get_connection()
+    conn.row_factory = sqlite3.Row
+
+    cur = conn.cursor()
+
+    cur.execute("""
+        SELECT
+            status,
+            COUNT(*) as total
+        FROM orders
+        WHERE DATE(created_at) = DATE('now')
+        AND report_status = 0
+        GROUP BY status
+    """)
+
+    rows = cur.fetchall()
+
+    conn.close()
+
+    return [
+        dict(row)
+        for row in rows
+    ]
+
+
+def get_manual_review_orders():
+
+    conn = get_connection()
+    conn.row_factory = sqlite3.Row
+
+    cur = conn.cursor()
+
+    cur.execute("""
+
+        SELECT
+
+            o.order_id,
+            o.status,
+            o.cs_note,
+            o.playright_note,
+
+            pe.sender,
+            pe.subject,
+
+            a.original_name
+
+        FROM orders o
+
+        LEFT JOIN attachments a
+            ON o.attachment_id = a.id
+
+        LEFT JOIN processed_emails pe
+            ON a.email_uid = pe.email_uid
+
+        WHERE report_status = 0
+            AND (o.has_issues = 1 OR o.status = 'FAILED')
+            AND DATE(o.created_at) = DATE('now')
+
+        ORDER BY o.created_at DESC
+
+    """)
+
+    rows = cur.fetchall()
+
+    conn.close()
+
+    return [
+        dict(row)
+        for row in rows
+    ]
