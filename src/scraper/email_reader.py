@@ -4,8 +4,9 @@ from email.header import decode_header
 from pathlib import Path
 
 from src.config import EMAIL_ADDRESS, EMAIL_PASSWORD, IMAP_SERVER
-from src.database.db import is_email_processed, save_processed_email
+from src.database.db import is_email_processed, save_processed_email, save_attachment_record
 from src.utils.logger import logger
+from src.processors.email_classifier import classify_email
 
 
 ATTACHMENT_DIR = Path("data/raw")
@@ -69,14 +70,20 @@ def save_attachments(msg, email_uid):
         if not filename:
             continue
 
-        decoded_name = decode_email_header(filename)
+        original_name = decode_email_header(filename)
 
-        safe_filename = f"{email_uid}_{decoded_name}"
+        safe_filename = f"{email_uid}_{original_name}"
 
         filepath = ATTACHMENT_DIR / safe_filename
 
         with open(filepath, "wb") as f:
             f.write(part.get_payload(decode=True))
+
+        save_attachment_record(
+            email_uid=email_uid,
+            original_name=original_name,
+            stored_path=str(filepath)
+        )
 
         logger.info(f"Attachment saved: {filepath}")
 
@@ -112,12 +119,17 @@ def extract_email_body(msg):
 def process_email(msg, email_uid):
     subject = decode_email_header(msg.get("Subject"))
     sender = decode_email_header(msg.get("From"))
+    email_body = extract_email_body(msg)
+    
+    email_type = classify_email(subject, sender, email_body)
+    logger.info(f"Email type: {email_type}")
+
+    if email_type != "ORDER":
+        logger.info("Skipped non-order email")
+        return
 
     attachment_names = extract_attachment_names(msg)
-
     saved_files = save_attachments(msg, email_uid)
-
-    email_body = extract_email_body(msg)
 
     logger.info("=" * 50)
     logger.info(f"Processing email UID: {email_uid}")
