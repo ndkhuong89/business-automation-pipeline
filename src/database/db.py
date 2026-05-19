@@ -285,6 +285,26 @@ def mark_report_sent(order_ids):
     )
 
     conn.commit()
+
+def mark_report_sent_new(order_ids):
+
+    if not order_ids:
+        return
+
+    conn = get_connection()
+    cur = conn.cursor()
+
+    placeholders = ",".join(["?"] * len(order_ids)) #["?", "?", "?", "?", "?"]
+
+    sql = f"""
+        UPDATE orders
+        SET report_status = 1
+        WHERE order_id IN ({placeholders})
+    """
+
+    cur.execute(sql, order_ids)
+
+    conn.commit()
     
 def get_report_summary():
 
