@@ -1,6 +1,6 @@
 from src.shared.db import get_connection
 
-def fetch_ready_orders(limit=10):
+def fetch_ready_orders(limit=100):
 
     conn = get_connection()
 

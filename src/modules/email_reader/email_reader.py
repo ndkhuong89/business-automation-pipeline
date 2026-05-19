@@ -2,6 +2,7 @@ import imaplib
 import email
 from email.header import decode_header
 from pathlib import Path
+from datetime import datetime, timedelta
 
 from src.config import EMAIL_ADDRESS, EMAIL_PASSWORD, IMAP_SERVER, ATTACHMENT_DIR
 from src.shared.logger import logger
@@ -163,7 +164,11 @@ def run():
 
         mail.select("inbox")
 
-        status, messages = mail.uid("search", None, "ALL")
+        today = datetime.now()
+        yesterday = today - timedelta(days=1)
+        since_date = yesterday.strftime("%d-%b-%Y")
+        status, messages = mail.uid("search", None, f'(SINCE "{since_date}")')
+        #status, messages = mail.uid("search", None, "ALL")
 
         if status != "OK":
             logger.error("Failed to search emails")

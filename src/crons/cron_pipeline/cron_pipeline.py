@@ -64,6 +64,7 @@ def run_pipeline():
         run_step("src.modules.auto_create_order.auto_create_order", run_id) 
 
         logger.info(f"PIPELINE SUCCESS | RUN_ID: {run_id}")
+        logger.info("=" * 100)
 
     except Exception as e:
 
@@ -77,7 +78,7 @@ scheduler = BlockingScheduler()
 scheduler.add_job(
     run_pipeline,
     "interval",
-    minutes=1,
+    minutes=5,
     next_run_time=datetime.now(),
     max_instances=1,
     coalesce=True

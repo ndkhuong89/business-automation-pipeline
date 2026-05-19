@@ -30,27 +30,16 @@ def corrupt(value, field):
 
     r = random.random()
 
-    # missing value
-    if r < 0.03:
+    if r < 0.02:
         return ""
 
-    # negative value
-    if r < 0.05:
-
-        if field == "qty":
-            return -random.randint(1, 5)
-
+    elif r < 0.04:
         if field == "price":
             return -random.randint(10, 2000)
 
-    # string in numeric field
-    if r < 0.10:
-
+    elif r < 0.06:
         if field == "qty":
             return "two"
-
-        if field == "price":
-            return "one hundred"
 
     return value
 
@@ -107,7 +96,7 @@ def generate_orders(num_orders=10):
 
 def run():
 
-    data = generate_orders(random.randint(3, 6))
+    data = generate_orders(random.randint(20, 20))
 
     df = pd.DataFrame(data)
 
