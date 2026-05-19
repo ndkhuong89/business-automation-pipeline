@@ -1,14 +1,14 @@
 from apscheduler.schedulers.blocking import BlockingScheduler
 import subprocess
 import sys
+import os
 from datetime import datetime
 
 from src.shared.logger import logger
 
 
 def generate_run_id():
-
-    return datetime.now().strftime("%Y%m%d_%H%M%S")
+    return f"{datetime.now():%Y%m%d_%H%M%S}-{os.getpid()}"
 
 
 def run_step(step_name: str, run_id: str):
@@ -51,9 +51,9 @@ def run_pipeline():
 
     run_id = generate_run_id()
 
-    logger.info("==============================")
+    logger.info("============================================================")
     logger.info(f"PIPELINE STARTED | RUN_ID: {run_id}")
-    logger.info("==============================")
+    logger.info("============================================================")
 
     try:
 
@@ -61,7 +61,7 @@ def run_pipeline():
 
         run_step("src.modules.attachment_worker.attachment_worker", run_id)
 
-        run_step("src.modules.cron_pipeline.cron_pipeline", run_id) 
+        run_step("src.modules.auto_create_order.auto_create_order", run_id) 
 
         logger.info(f"PIPELINE SUCCESS | RUN_ID: {run_id}")
 

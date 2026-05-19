@@ -6,7 +6,7 @@ from datetime import datetime
 
 from src.shared.logger import logger
 
-#taskkill /PID <pid> /F
+#taskkill /PID 14188 /F
 
 def generate_run_id():
     return f"{datetime.now():%Y%m%d_%H%M%S}-{os.getpid()}"

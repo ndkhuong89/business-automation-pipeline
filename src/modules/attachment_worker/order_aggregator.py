@@ -3,7 +3,7 @@ import pandas as pd
 
 from collections import defaultdict
 
-src.shared.loggerlogger import logger
+from src.shared.logger import logger
 
 from src.shared.db import (
     save_order,

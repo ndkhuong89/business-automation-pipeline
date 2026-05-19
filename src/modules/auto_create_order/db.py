@@ -1,8 +1,8 @@
-from src.shared.db import get_conn
+from src.shared.db import get_connection
 
 def fetch_ready_orders(limit=10):
 
-    conn = get_conn()
+    conn = get_connection()
 
     cur = conn.cursor()
 
@@ -50,7 +50,7 @@ def fetch_ready_orders(limit=10):
 
 def mark_done(order_id):
 
-    conn = get_conn()
+    conn = get_connection()
 
     try:
 
@@ -71,7 +71,7 @@ def mark_done(order_id):
 
 def mark_failed(order_id, error):
 
-    conn = get_conn()
+    conn = get_connection()
 
     try:
 
