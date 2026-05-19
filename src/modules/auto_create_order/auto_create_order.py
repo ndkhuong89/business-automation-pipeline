@@ -8,6 +8,7 @@ from src.modules.auto_create_order.db import (
 )
 
 from src.config import AUTO_LOG_DIR
+from src.shared.logger import logger
 
 ERP_URL = "http://127.0.0.1:5000"
  
@@ -29,7 +30,7 @@ def login(page, retry=3):
 
         try:
 
-            print(f"Login attempt {attempt}")
+            logger.info(f"Login attempt {attempt}")
 
             page.goto(f"{ERP_URL}/login", timeout=10000)
 
@@ -40,13 +41,13 @@ def login(page, retry=3):
 
             page.wait_for_url("**/orders/create", timeout=10000)
 
-            print("Login success")
+            logger.info("Login success")
 
             return
 
         except Exception as e:
 
-            print(f"Login failed: {e}")
+            logger.info(f"Login failed: {e}")
 
             take_screenshot(page, f"login_failed_{attempt}")
 
@@ -62,7 +63,7 @@ def create_order(page, order, retry=3):
 
         try:
 
-            print(f"Create order {order_id} attempt {attempt}")
+            logger.info(f"Create order {order_id} attempt {attempt}")
 
             page.goto(f"{ERP_URL}/orders/create", timeout=10000)
 
@@ -105,7 +106,7 @@ def create_order(page, order, retry=3):
 
                 select.wait_for(timeout=300)
 				
-                print(sku)
+                logger.info(f"Adding {sku}")
 
                 select.select_option(value=sku)
 
@@ -130,13 +131,13 @@ def create_order(page, order, retry=3):
                     f"Order not visible on ERP list: {order_id}"
                 )
 
-            print(f"Order success {order_id}")
+            logger.info(f"Order success {order_id}")
 
             return
 
         except Exception as e:
 
-            print(f"Order failed {order_id}: {e}")
+            logger.info(f"Order failed {order_id}: {e}")
 
             take_screenshot(
                 page,
@@ -156,7 +157,7 @@ def run():
 
     if not orders:
 
-        print("No READY orders")
+        logger.info("No READY orders")
 
         return
 
@@ -176,21 +177,22 @@ def run():
 
                 try:
 
-                    print(f"Processing {order_id}")
+                    logger.info(f"Processing {order_id}")
 
                     create_order(page, order)
 
                     mark_done(order_id)
 
-                    print(f"DONE {order_id}")
+                    logger.info(f"DONE {order_id}")
 
                 except Exception as e:
 
                     mark_failed(order_id, str(e))
 
-                    print(f"FAILED {order_id}")
+                    logger.info(f"FAILED {order_id}")
 
-                    print(e)
+                    logger.info(e)
+
 
         finally:
 

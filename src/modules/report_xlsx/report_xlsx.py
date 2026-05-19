@@ -5,6 +5,7 @@ from pathlib import Path
 from datetime import datetime
 from email.message import EmailMessage
 from src.config import EMAIL_ADDRESS, EMAIL_PASSWORD, DATA_OUTPUT_DIR
+from src.shared.logger import logger
 
 from src.shared.db import (
     get_report_summary,
@@ -68,7 +69,7 @@ def generate_report():
     )
     
     if not manual_review_data:
-        print(f"No manual review data → skip report")
+        logger.info(f"No manual review data → skip report")
         return
 
     timestamp = datetime.now().strftime(
@@ -96,11 +97,11 @@ def generate_report():
             index=False
         )
 
-    print(f"Report created: {output_file}")
+    logger.info(f"Report created: {output_file}")
 
     send_email_with_attachment(output_file)
 
-    print("Email sent successfully")
+    logger.info("Email sent successfully")
     
     order_ids = [
         row["order_id"]
