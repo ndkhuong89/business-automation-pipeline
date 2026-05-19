@@ -1,5 +1,5 @@
-from src.database.db import init_db
-from src.utils.logger import logger
+from src.shared.db import init_db
+from src.shared.logger import logger
 
 def main():
     logger.info("Initializing database...")
