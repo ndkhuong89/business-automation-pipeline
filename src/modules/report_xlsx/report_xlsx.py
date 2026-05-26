@@ -17,7 +17,7 @@ DATA_OUTPUT_DIR.mkdir(exist_ok=True)
 
 def send_email_with_attachment(file_path):
 
-    EMAIL_TO = "ndkhuong89@gmail.com"
+    EMAIL_TO = EMAIL_ADDRESS
 
     msg = EmailMessage()
     msg["Subject"] = "Daily Business Automation Report"

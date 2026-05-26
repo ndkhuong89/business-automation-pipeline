@@ -165,7 +165,7 @@ def run():
         mail.select("inbox")
 
         today = datetime.now()
-        yesterday = today - timedelta(days=1)
+        yesterday = today - timedelta(days=30)
         since_date = yesterday.strftime("%d-%b-%Y")
         status, messages = mail.uid("search", None, f'(SINCE "{since_date}")')
         #status, messages = mail.uid("search", None, "ALL")

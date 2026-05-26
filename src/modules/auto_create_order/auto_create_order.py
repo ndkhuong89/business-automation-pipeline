@@ -106,7 +106,7 @@ def create_order(page, order, retry=3):
 
                 select.wait_for(timeout=300)
 				
-                logger.info(f"Adding {sku}")
+                #logger.info(f"Adding {sku}")
 
                 select.select_option(value=sku)
 

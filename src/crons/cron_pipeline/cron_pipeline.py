@@ -63,6 +63,8 @@ def run_pipeline():
 
         run_step("src.modules.auto_create_order.auto_create_order", run_id) 
 
+        run_step("src.modules.report_xlsx.report_xlsx", run_id)
+
         logger.info(f"PIPELINE SUCCESS | RUN_ID: {run_id}")
         logger.info("=" * 100)
 

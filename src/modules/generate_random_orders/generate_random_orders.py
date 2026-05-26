@@ -30,16 +30,8 @@ def corrupt(value, field):
 
     r = random.random()
 
-    if r < 0.02:
+    if r < 0.01:
         return ""
-
-    elif r < 0.04:
-        if field == "price":
-            return -random.randint(10, 2000)
-
-    elif r < 0.06:
-        if field == "qty":
-            return "two"
 
     return value
 
@@ -47,10 +39,11 @@ def corrupt(value, field):
 def generate_orders(num_orders=10):
 
     rows = []
-
+    base = 5001
     for i in range(num_orders):
-
-        order_id = f"ORD-{datetime.now():%Y%m%d%H%M%S}-{i}"
+        order_id = f"ORD-{base + i}"
+        #order_id = f"ORD-{datetime.now():%Y%m%d%H%M%S}-{i}"
+        
 
         customer_name, phone, address = random.choice(CUSTOMERS)
 
@@ -59,7 +52,6 @@ def generate_orders(num_orders=10):
         selected_products = random.sample(PRODUCTS, num_items)
 
         for product in selected_products:
-
             sku = product["sku"]
             name = product["name"]
             price = product["price"]
@@ -67,7 +59,6 @@ def generate_orders(num_orders=10):
             qty = random.randint(1, 3)
 
             qty = corrupt(qty, "qty")
-            price = corrupt(price, "price")
 
             total = None
 
@@ -96,7 +87,7 @@ def generate_orders(num_orders=10):
 
 def run():
 
-    data = generate_orders(random.randint(20, 20))
+    data = generate_orders(random.randint(100, 100))
 
     df = pd.DataFrame(data)
 
