@@ -6,9 +6,9 @@ A simple end-to-end Business Automation System built with Python and Playwright.
 
 ## 🎥 Demo Video
 
-[![Watch the demo](https://img.youtube.com/vi/l7QADoWKCq0/maxresdefault.jpg)](https://youtu.be/l7QADoWKCq0)
+[![Watch the demo](https://img.youtube.com/vi/l7QADoWKCq0/maxresdefault.jpg)](https://www.youtube.com/watch?v=l7QADoWKCq0)
 
-▶ [Watch Demo Video](https://youtu.be/l7QADoWKCq0)
+▶ [Watch Demo Video](https://www.youtube.com/watch?v=l7QADoWKCq0)
 
 ---
 
