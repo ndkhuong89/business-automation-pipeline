@@ -1,0 +1,12 @@
+apscheduler
+beautifulsoup4
+loguru
+openpyxl
+pandas
+playwright
+python-dotenv
+requests
+xlsxwriter
+lxml
+imapclient
+pyzmail36

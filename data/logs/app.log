@@ -13462,3 +13462,228 @@ Call log:
 2026-05-25 12:23:49.042 | INFO     | __main__:run_step:39 - [RUN:20260525_122234-8788] SUCCESS STEP: src.modules.report_xlsx.report_xlsx
 2026-05-25 12:23:49.043 | INFO     | __main__:run_pipeline:68 - PIPELINE SUCCESS | RUN_ID: 20260525_122234-8788
 2026-05-25 12:23:49.044 | INFO     | __main__:run_pipeline:69 - ====================================================================================================
+2026-06-02 11:04:33.701 | INFO     | __main__:run:156 - Connecting to email server...
+2026-06-02 11:04:36.989 | INFO     | __main__:run:163 - Login successful
+2026-06-02 11:04:37.879 | INFO     | __main__:run:179 - Total emails found: 1
+2026-06-02 11:04:40.101 | INFO     | __main__:process_email:123 - Email type: ORDER
+2026-06-02 11:04:40.116 | INFO     | __main__:save_attachments:86 - Attachment saved: D:\python_projects\business-automation-pipeline\data\attachments\36_order_from_Khuong.xlsx
+2026-06-02 11:04:40.117 | INFO     | __main__:process_email:132 - ==================================================
+2026-06-02 11:04:40.117 | INFO     | __main__:process_email:133 - Processing email UID: 36
+2026-06-02 11:04:40.118 | INFO     | __main__:process_email:134 - Subject: Orders from customer today
+2026-06-02 11:04:40.118 | INFO     | __main__:process_email:135 - From: Khương Nguyễn <ndkhuong89@gmail.com>
+2026-06-02 11:04:40.119 | INFO     | __main__:process_email:136 - Attachments: ['order_from_Khuong.xlsx']
+2026-06-02 11:04:40.124 | INFO     | __main__:process_email:137 - Saved files: ['D:\\python_projects\\business-automation-pipeline\\data\\attachments\\36_order_from_Khuong.xlsx']
+2026-06-02 11:04:40.125 | INFO     | __main__:process_email:138 - Email body preview: Please check new orders
+
+2026-06-02 11:04:40.142 | INFO     | __main__:process_email:152 - Email UID saved: 36
+2026-06-02 11:04:40.954 | INFO     | __main__:run:206 - Disconnected from email server
+2026-06-02 11:05:23.515 | INFO     | __main__:run:27 - Processing attachment_id=23
+2026-06-02 11:05:25.262 | INFO     | src.modules.attachment_worker.order_aggregator:process_excel:100 - Processing Excel: D:\python_projects\business-automation-pipeline\data\attachments\36_order_from_Khuong.xlsx
+2026-06-02 11:05:25.296 | INFO     | src.modules.attachment_worker.order_aggregator:process_excel:118 - Total rows: 126
+2026-06-02 11:05:26.592 | INFO     | src.modules.attachment_worker.order_aggregator:process_excel:188 - Final orders: 50
+2026-06-02 11:05:26.593 | INFO     | src.modules.attachment_worker.order_aggregator:process_excel:200 - READY orders: 50
+2026-06-02 11:05:26.593 | INFO     | src.modules.attachment_worker.order_aggregator:process_excel:201 - REJECTED orders: 0
+2026-06-02 11:05:26.593 | INFO     | __main__:run:63 - Processed orders: 50
+2026-06-02 11:05:26.606 | INFO     | __main__:run:72 - Attachment completed
+2026-06-02 11:12:54.224 | INFO     | __main__:login:33 - Login attempt 1
+2026-06-02 11:12:54.957 | INFO     | __main__:login:44 - Login success
+2026-06-02 11:12:54.991 | INFO     | __main__:run:180 - Processing ORD-5001
+2026-06-02 11:12:55.011 | INFO     | __main__:create_order:66 - Create order ORD-5001 attempt 1
+2026-06-02 11:12:56.202 | INFO     | __main__:create_order:134 - Order success ORD-5001
+2026-06-02 11:12:56.232 | INFO     | __main__:run:186 - DONE ORD-5001
+2026-06-02 11:12:56.233 | INFO     | __main__:run:180 - Processing ORD-5002
+2026-06-02 11:12:56.233 | INFO     | __main__:create_order:66 - Create order ORD-5002 attempt 1
+2026-06-02 11:12:57.860 | INFO     | __main__:create_order:134 - Order success ORD-5002
+2026-06-02 11:12:57.873 | INFO     | __main__:run:186 - DONE ORD-5002
+2026-06-02 11:12:57.875 | INFO     | __main__:run:180 - Processing ORD-5003
+2026-06-02 11:12:57.876 | INFO     | __main__:create_order:66 - Create order ORD-5003 attempt 1
+2026-06-02 11:12:58.725 | INFO     | __main__:create_order:134 - Order success ORD-5003
+2026-06-02 11:12:58.741 | INFO     | __main__:run:186 - DONE ORD-5003
+2026-06-02 11:12:58.742 | INFO     | __main__:run:180 - Processing ORD-5004
+2026-06-02 11:12:58.743 | INFO     | __main__:create_order:66 - Create order ORD-5004 attempt 1
+2026-06-02 11:12:59.595 | INFO     | __main__:create_order:134 - Order success ORD-5004
+2026-06-02 11:12:59.610 | INFO     | __main__:run:186 - DONE ORD-5004
+2026-06-02 11:12:59.611 | INFO     | __main__:run:180 - Processing ORD-5005
+2026-06-02 11:12:59.612 | INFO     | __main__:create_order:66 - Create order ORD-5005 attempt 1
+2026-06-02 11:13:00.451 | INFO     | __main__:create_order:134 - Order success ORD-5005
+2026-06-02 11:13:00.465 | INFO     | __main__:run:186 - DONE ORD-5005
+2026-06-02 11:13:00.466 | INFO     | __main__:run:180 - Processing ORD-5006
+2026-06-02 11:13:00.466 | INFO     | __main__:create_order:66 - Create order ORD-5006 attempt 1
+2026-06-02 11:13:01.360 | INFO     | __main__:create_order:134 - Order success ORD-5006
+2026-06-02 11:13:01.367 | INFO     | __main__:run:186 - DONE ORD-5006
+2026-06-02 11:13:01.367 | INFO     | __main__:run:180 - Processing ORD-5007
+2026-06-02 11:13:01.367 | INFO     | __main__:create_order:66 - Create order ORD-5007 attempt 1
+2026-06-02 11:13:02.684 | INFO     | __main__:create_order:134 - Order success ORD-5007
+2026-06-02 11:13:02.698 | INFO     | __main__:run:186 - DONE ORD-5007
+2026-06-02 11:13:02.699 | INFO     | __main__:run:180 - Processing ORD-5008
+2026-06-02 11:13:02.700 | INFO     | __main__:create_order:66 - Create order ORD-5008 attempt 1
+2026-06-02 11:13:04.019 | INFO     | __main__:create_order:134 - Order success ORD-5008
+2026-06-02 11:13:04.042 | INFO     | __main__:run:186 - DONE ORD-5008
+2026-06-02 11:13:04.043 | INFO     | __main__:run:180 - Processing ORD-5009
+2026-06-02 11:13:04.044 | INFO     | __main__:create_order:66 - Create order ORD-5009 attempt 1
+2026-06-02 11:13:04.878 | INFO     | __main__:create_order:134 - Order success ORD-5009
+2026-06-02 11:13:04.892 | INFO     | __main__:run:186 - DONE ORD-5009
+2026-06-02 11:13:04.893 | INFO     | __main__:run:180 - Processing ORD-5010
+2026-06-02 11:13:04.894 | INFO     | __main__:create_order:66 - Create order ORD-5010 attempt 1
+2026-06-02 11:13:06.120 | INFO     | __main__:create_order:134 - Order success ORD-5010
+2026-06-02 11:13:06.140 | INFO     | __main__:run:186 - DONE ORD-5010
+2026-06-02 11:13:06.140 | INFO     | __main__:run:180 - Processing ORD-5011
+2026-06-02 11:13:06.142 | INFO     | __main__:create_order:66 - Create order ORD-5011 attempt 1
+2026-06-02 11:13:06.969 | INFO     | __main__:create_order:134 - Order success ORD-5011
+2026-06-02 11:13:06.985 | INFO     | __main__:run:186 - DONE ORD-5011
+2026-06-02 11:13:06.985 | INFO     | __main__:run:180 - Processing ORD-5012
+2026-06-02 11:13:06.985 | INFO     | __main__:create_order:66 - Create order ORD-5012 attempt 1
+2026-06-02 11:13:08.232 | INFO     | __main__:create_order:134 - Order success ORD-5012
+2026-06-02 11:13:08.245 | INFO     | __main__:run:186 - DONE ORD-5012
+2026-06-02 11:13:08.245 | INFO     | __main__:run:180 - Processing ORD-5013
+2026-06-02 11:13:08.247 | INFO     | __main__:create_order:66 - Create order ORD-5013 attempt 1
+2026-06-02 11:13:09.078 | INFO     | __main__:create_order:134 - Order success ORD-5013
+2026-06-02 11:13:09.086 | INFO     | __main__:run:186 - DONE ORD-5013
+2026-06-02 11:13:09.086 | INFO     | __main__:run:180 - Processing ORD-5014
+2026-06-02 11:13:09.086 | INFO     | __main__:create_order:66 - Create order ORD-5014 attempt 1
+2026-06-02 11:13:10.338 | INFO     | __main__:create_order:134 - Order success ORD-5014
+2026-06-02 11:13:10.358 | INFO     | __main__:run:186 - DONE ORD-5014
+2026-06-02 11:13:10.359 | INFO     | __main__:run:180 - Processing ORD-5015
+2026-06-02 11:13:10.360 | INFO     | __main__:create_order:66 - Create order ORD-5015 attempt 1
+2026-06-02 11:13:11.172 | INFO     | __main__:create_order:134 - Order success ORD-5015
+2026-06-02 11:13:11.199 | INFO     | __main__:run:186 - DONE ORD-5015
+2026-06-02 11:13:11.200 | INFO     | __main__:run:180 - Processing ORD-5016
+2026-06-02 11:13:11.201 | INFO     | __main__:create_order:66 - Create order ORD-5016 attempt 1
+2026-06-02 11:13:12.473 | INFO     | __main__:create_order:134 - Order success ORD-5016
+2026-06-02 11:13:12.487 | INFO     | __main__:run:186 - DONE ORD-5016
+2026-06-02 11:13:12.488 | INFO     | __main__:run:180 - Processing ORD-5017
+2026-06-02 11:13:12.490 | INFO     | __main__:create_order:66 - Create order ORD-5017 attempt 1
+2026-06-02 11:13:13.762 | INFO     | __main__:create_order:134 - Order success ORD-5017
+2026-06-02 11:13:13.772 | INFO     | __main__:run:186 - DONE ORD-5017
+2026-06-02 11:13:13.772 | INFO     | __main__:run:180 - Processing ORD-5018
+2026-06-02 11:13:13.772 | INFO     | __main__:create_order:66 - Create order ORD-5018 attempt 1
+2026-06-02 11:13:15.064 | INFO     | __main__:create_order:134 - Order success ORD-5018
+2026-06-02 11:13:15.078 | INFO     | __main__:run:186 - DONE ORD-5018
+2026-06-02 11:13:15.078 | INFO     | __main__:run:180 - Processing ORD-5019
+2026-06-02 11:13:15.079 | INFO     | __main__:create_order:66 - Create order ORD-5019 attempt 1
+2026-06-02 11:13:16.342 | INFO     | __main__:create_order:134 - Order success ORD-5019
+2026-06-02 11:13:16.356 | INFO     | __main__:run:186 - DONE ORD-5019
+2026-06-02 11:13:16.357 | INFO     | __main__:run:180 - Processing ORD-5020
+2026-06-02 11:13:16.358 | INFO     | __main__:create_order:66 - Create order ORD-5020 attempt 1
+2026-06-02 11:13:17.174 | INFO     | __main__:create_order:134 - Order success ORD-5020
+2026-06-02 11:13:17.202 | INFO     | __main__:run:186 - DONE ORD-5020
+2026-06-02 11:13:17.202 | INFO     | __main__:run:180 - Processing ORD-5021
+2026-06-02 11:13:17.203 | INFO     | __main__:create_order:66 - Create order ORD-5021 attempt 1
+2026-06-02 11:13:18.413 | INFO     | __main__:create_order:134 - Order success ORD-5021
+2026-06-02 11:13:18.433 | INFO     | __main__:run:186 - DONE ORD-5021
+2026-06-02 11:13:18.433 | INFO     | __main__:run:180 - Processing ORD-5022
+2026-06-02 11:13:18.434 | INFO     | __main__:create_order:66 - Create order ORD-5022 attempt 1
+2026-06-02 11:13:19.697 | INFO     | __main__:create_order:134 - Order success ORD-5022
+2026-06-02 11:13:19.706 | INFO     | __main__:run:186 - DONE ORD-5022
+2026-06-02 11:13:19.706 | INFO     | __main__:run:180 - Processing ORD-5023
+2026-06-02 11:13:19.706 | INFO     | __main__:create_order:66 - Create order ORD-5023 attempt 1
+2026-06-02 11:13:20.558 | INFO     | __main__:create_order:134 - Order success ORD-5023
+2026-06-02 11:13:20.571 | INFO     | __main__:run:186 - DONE ORD-5023
+2026-06-02 11:13:20.571 | INFO     | __main__:run:180 - Processing ORD-5024
+2026-06-02 11:13:20.572 | INFO     | __main__:create_order:66 - Create order ORD-5024 attempt 1
+2026-06-02 11:13:21.392 | INFO     | __main__:create_order:134 - Order success ORD-5024
+2026-06-02 11:13:21.405 | INFO     | __main__:run:186 - DONE ORD-5024
+2026-06-02 11:13:21.406 | INFO     | __main__:run:180 - Processing ORD-5025
+2026-06-02 11:13:21.407 | INFO     | __main__:create_order:66 - Create order ORD-5025 attempt 1
+2026-06-02 11:13:22.286 | INFO     | __main__:create_order:134 - Order success ORD-5025
+2026-06-02 11:13:22.300 | INFO     | __main__:run:186 - DONE ORD-5025
+2026-06-02 11:13:22.300 | INFO     | __main__:run:180 - Processing ORD-5026
+2026-06-02 11:13:22.300 | INFO     | __main__:create_order:66 - Create order ORD-5026 attempt 1
+2026-06-02 11:13:23.658 | INFO     | __main__:create_order:134 - Order success ORD-5026
+2026-06-02 11:13:23.673 | INFO     | __main__:run:186 - DONE ORD-5026
+2026-06-02 11:13:23.673 | INFO     | __main__:run:180 - Processing ORD-5027
+2026-06-02 11:13:23.673 | INFO     | __main__:create_order:66 - Create order ORD-5027 attempt 1
+2026-06-02 11:13:24.964 | INFO     | __main__:create_order:134 - Order success ORD-5027
+2026-06-02 11:13:24.975 | INFO     | __main__:run:186 - DONE ORD-5027
+2026-06-02 11:13:24.975 | INFO     | __main__:run:180 - Processing ORD-5028
+2026-06-02 11:13:24.975 | INFO     | __main__:create_order:66 - Create order ORD-5028 attempt 1
+2026-06-02 11:13:26.302 | INFO     | __main__:create_order:134 - Order success ORD-5028
+2026-06-02 11:13:26.309 | INFO     | __main__:run:186 - DONE ORD-5028
+2026-06-02 11:13:26.309 | INFO     | __main__:run:180 - Processing ORD-5029
+2026-06-02 11:13:26.309 | INFO     | __main__:create_order:66 - Create order ORD-5029 attempt 1
+2026-06-02 11:13:27.145 | INFO     | __main__:create_order:134 - Order success ORD-5029
+2026-06-02 11:13:27.159 | INFO     | __main__:run:186 - DONE ORD-5029
+2026-06-02 11:13:27.159 | INFO     | __main__:run:180 - Processing ORD-5030
+2026-06-02 11:13:27.159 | INFO     | __main__:create_order:66 - Create order ORD-5030 attempt 1
+2026-06-02 11:13:27.986 | INFO     | __main__:create_order:134 - Order success ORD-5030
+2026-06-02 11:13:28.001 | INFO     | __main__:run:186 - DONE ORD-5030
+2026-06-02 11:13:28.002 | INFO     | __main__:run:180 - Processing ORD-5031
+2026-06-02 11:13:28.002 | INFO     | __main__:create_order:66 - Create order ORD-5031 attempt 1
+2026-06-02 11:13:29.260 | INFO     | __main__:create_order:134 - Order success ORD-5031
+2026-06-02 11:13:29.276 | INFO     | __main__:run:186 - DONE ORD-5031
+2026-06-02 11:13:29.276 | INFO     | __main__:run:180 - Processing ORD-5032
+2026-06-02 11:13:29.280 | INFO     | __main__:create_order:66 - Create order ORD-5032 attempt 1
+2026-06-02 11:13:30.118 | INFO     | __main__:create_order:134 - Order success ORD-5032
+2026-06-02 11:13:30.130 | INFO     | __main__:run:186 - DONE ORD-5032
+2026-06-02 11:13:30.130 | INFO     | __main__:run:180 - Processing ORD-5033
+2026-06-02 11:13:30.130 | INFO     | __main__:create_order:66 - Create order ORD-5033 attempt 1
+2026-06-02 11:13:31.386 | INFO     | __main__:create_order:134 - Order success ORD-5033
+2026-06-02 11:13:31.394 | INFO     | __main__:run:186 - DONE ORD-5033
+2026-06-02 11:13:31.394 | INFO     | __main__:run:180 - Processing ORD-5034
+2026-06-02 11:13:31.394 | INFO     | __main__:create_order:66 - Create order ORD-5034 attempt 1
+2026-06-02 11:13:32.211 | INFO     | __main__:create_order:134 - Order success ORD-5034
+2026-06-02 11:13:32.232 | INFO     | __main__:run:186 - DONE ORD-5034
+2026-06-02 11:13:32.233 | INFO     | __main__:run:180 - Processing ORD-5035
+2026-06-02 11:13:32.234 | INFO     | __main__:create_order:66 - Create order ORD-5035 attempt 1
+2026-06-02 11:13:33.518 | INFO     | __main__:create_order:134 - Order success ORD-5035
+2026-06-02 11:13:33.528 | INFO     | __main__:run:186 - DONE ORD-5035
+2026-06-02 11:13:33.528 | INFO     | __main__:run:180 - Processing ORD-5036
+2026-06-02 11:13:33.528 | INFO     | __main__:create_order:66 - Create order ORD-5036 attempt 1
+2026-06-02 11:13:34.393 | INFO     | __main__:create_order:134 - Order success ORD-5036
+2026-06-02 11:13:34.402 | INFO     | __main__:run:186 - DONE ORD-5036
+2026-06-02 11:13:34.402 | INFO     | __main__:run:180 - Processing ORD-5037
+2026-06-02 11:13:34.402 | INFO     | __main__:create_order:66 - Create order ORD-5037 attempt 1
+2026-06-02 11:13:35.236 | INFO     | __main__:create_order:134 - Order success ORD-5037
+2026-06-02 11:13:35.245 | INFO     | __main__:run:186 - DONE ORD-5037
+2026-06-02 11:13:35.245 | INFO     | __main__:run:180 - Processing ORD-5038
+2026-06-02 11:13:35.245 | INFO     | __main__:create_order:66 - Create order ORD-5038 attempt 1
+2026-06-02 11:13:36.523 | INFO     | __main__:create_order:134 - Order success ORD-5038
+2026-06-02 11:13:36.531 | INFO     | __main__:run:186 - DONE ORD-5038
+2026-06-02 11:13:36.531 | INFO     | __main__:run:180 - Processing ORD-5039
+2026-06-02 11:13:36.531 | INFO     | __main__:create_order:66 - Create order ORD-5039 attempt 1
+2026-06-02 11:13:37.790 | INFO     | __main__:create_order:134 - Order success ORD-5039
+2026-06-02 11:13:37.797 | INFO     | __main__:run:186 - DONE ORD-5039
+2026-06-02 11:13:37.797 | INFO     | __main__:run:180 - Processing ORD-5040
+2026-06-02 11:13:37.797 | INFO     | __main__:create_order:66 - Create order ORD-5040 attempt 1
+2026-06-02 11:13:38.655 | INFO     | __main__:create_order:134 - Order success ORD-5040
+2026-06-02 11:13:38.663 | INFO     | __main__:run:186 - DONE ORD-5040
+2026-06-02 11:13:38.663 | INFO     | __main__:run:180 - Processing ORD-5041
+2026-06-02 11:13:38.663 | INFO     | __main__:create_order:66 - Create order ORD-5041 attempt 1
+2026-06-02 11:13:39.963 | INFO     | __main__:create_order:134 - Order success ORD-5041
+2026-06-02 11:13:39.964 | INFO     | __main__:run:186 - DONE ORD-5041
+2026-06-02 11:13:39.964 | INFO     | __main__:run:180 - Processing ORD-5042
+2026-06-02 11:13:39.964 | INFO     | __main__:create_order:66 - Create order ORD-5042 attempt 1
+2026-06-02 11:13:40.814 | INFO     | __main__:create_order:134 - Order success ORD-5042
+2026-06-02 11:13:40.814 | INFO     | __main__:run:186 - DONE ORD-5042
+2026-06-02 11:13:40.814 | INFO     | __main__:run:180 - Processing ORD-5043
+2026-06-02 11:13:40.830 | INFO     | __main__:create_order:66 - Create order ORD-5043 attempt 1
+2026-06-02 11:13:41.671 | INFO     | __main__:create_order:134 - Order success ORD-5043
+2026-06-02 11:13:41.682 | INFO     | __main__:run:186 - DONE ORD-5043
+2026-06-02 11:13:41.682 | INFO     | __main__:run:180 - Processing ORD-5044
+2026-06-02 11:13:41.682 | INFO     | __main__:create_order:66 - Create order ORD-5044 attempt 1
+2026-06-02 11:13:42.526 | INFO     | __main__:create_order:134 - Order success ORD-5044
+2026-06-02 11:13:42.532 | INFO     | __main__:run:186 - DONE ORD-5044
+2026-06-02 11:13:42.532 | INFO     | __main__:run:180 - Processing ORD-5045
+2026-06-02 11:13:42.532 | INFO     | __main__:create_order:66 - Create order ORD-5045 attempt 1
+2026-06-02 11:13:43.796 | INFO     | __main__:create_order:134 - Order success ORD-5045
+2026-06-02 11:13:43.799 | INFO     | __main__:run:186 - DONE ORD-5045
+2026-06-02 11:13:43.799 | INFO     | __main__:run:180 - Processing ORD-5046
+2026-06-02 11:13:43.799 | INFO     | __main__:create_order:66 - Create order ORD-5046 attempt 1
+2026-06-02 11:13:44.649 | INFO     | __main__:create_order:134 - Order success ORD-5046
+2026-06-02 11:13:44.649 | INFO     | __main__:run:186 - DONE ORD-5046
+2026-06-02 11:13:44.649 | INFO     | __main__:run:180 - Processing ORD-5047
+2026-06-02 11:13:44.649 | INFO     | __main__:create_order:66 - Create order ORD-5047 attempt 1
+2026-06-02 11:13:45.477 | INFO     | __main__:create_order:134 - Order success ORD-5047
+2026-06-02 11:13:45.487 | INFO     | __main__:run:186 - DONE ORD-5047
+2026-06-02 11:13:45.487 | INFO     | __main__:run:180 - Processing ORD-5048
+2026-06-02 11:13:45.487 | INFO     | __main__:create_order:66 - Create order ORD-5048 attempt 1
+2026-06-02 11:13:46.770 | INFO     | __main__:create_order:134 - Order success ORD-5048
+2026-06-02 11:13:46.780 | INFO     | __main__:run:186 - DONE ORD-5048
+2026-06-02 11:13:46.781 | INFO     | __main__:run:180 - Processing ORD-5049
+2026-06-02 11:13:46.784 | INFO     | __main__:create_order:66 - Create order ORD-5049 attempt 1
+2026-06-02 11:13:48.024 | INFO     | __main__:create_order:134 - Order success ORD-5049
+2026-06-02 11:13:48.031 | INFO     | __main__:run:186 - DONE ORD-5049
+2026-06-02 11:13:48.031 | INFO     | __main__:run:180 - Processing ORD-5050
+2026-06-02 11:13:48.032 | INFO     | __main__:create_order:66 - Create order ORD-5050 attempt 1
+2026-06-02 11:13:49.290 | INFO     | __main__:create_order:134 - Order success ORD-5050
+2026-06-02 11:13:49.298 | INFO     | __main__:run:186 - DONE ORD-5050
